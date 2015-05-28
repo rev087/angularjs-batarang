@@ -32,6 +32,10 @@ directive('batTabs', function ($compile, $templateCache, $http, inspectedApp) {
         }
       }
 
+      scope.ngInspect = function() {
+        window.ngInspector.toggle();
+      };
+
       scope.select = function (pane) {
         $http.get(pane.src, { cache: $templateCache }).
           then(function (response) {
